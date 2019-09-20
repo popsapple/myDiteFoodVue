@@ -65,7 +65,9 @@
     "vue-property-decorator": "^8.2.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
-    "vuex-electron": "^1.0.0"
+    "vuex-electron": "^1.0.0",
+    "xml-query": "^1.5.0",
+    "xml-reader": "^2.4.3"
   },
   "devDependencies": {
     "ajv": "^6.5.0",

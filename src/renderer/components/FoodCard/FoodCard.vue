@@ -1,37 +1,72 @@
 <template>
-  <div>
+  <div class="FoodWapper">
     <div class="FoodCard" v-for="(item, index) in foods" v-bind:key="index">
-      <ul>
+      <ul class="content">
         <li>
-          <strong>{{ item.title }}</strong>
-          <img v-bind:src="item.image" v-bind:alt="item.title" />
+          <ul>
+            <li>
+              <button class="insert" v-on:click="insertCart(item)">아침</button>
+            </li>
+            <li>
+              <button class="insert" v-on:click="insertCart(item)">점심</button>
+            </li>
+            <li>
+              <button class="insert" v-on:click="insertCart(item)">저녁</button>
+            </li>
+          </ul>
+          <strong class="title">{{ item.name }}</strong>
+          <img
+            v-bind:src="'/static/' + item.imgurl + Math.ceil(Math.random()*10) + '.jpg'"
+            v-bind:alt="item.title"
+          />
         </li>
         <li>
-          <strong>{{ item.weight }} 당 영양성분</strong>
+          <strong>{{ item.weight }}g 당 영양성분</strong>
         </li>
         <li>
-          <strong>칼로리 :{{ item.kcal }}</strong>
-          <strong>{{ item.kcal / 2000 }}</strong>
+          <i>칼로리</i>
+          <span>{{ item.kcal }}kal</span>
+          <meter v-bind:id="item.name" min="0" max="2000" v-bind:value="item.kcal">item.kcal/2000</meter>
         </li>
         <li>
-          <strong>지방 :{{ item.fat }}</strong>
-          <strong>{{ item.fat / 50 }}</strong>
+          <i>지방</i>
+          <span>{{ item.fat }}g</span>
+          <meter v-bind:id="item.name" min="0" max="50" v-bind:value="item.fat">item.fat/50</meter>
         </li>
         <li>
-          <strong>단백질 :{{ item.protain }}</strong>
-          <strong>{{ item.protain / 50 }}</strong>
+          <i>단백질</i>
+          <span>{{ item.protein }}g</span>
+          <meter v-bind:id="item.name" min="0" max="50" v-bind:value="item.protein">item.protein/50</meter>
         </li>
         <li>
-          <strong>탄수화물 :{{item.carbohydrate}}</strong>
-          <strong>{{ item.carbohydrate / 328 }}</strong>
+          <i>탄수화물</i>
+          <span>{{ item.carbon }}g</span>
+          <meter
+            v-bind:id="item.name"
+            min="0"
+            max="328"
+            v-bind:value="item.carbon"
+          >item.protcarbonein/328</meter>
         </li>
         <li>
-          <strong>나트륨 :{{item.salt}}</strong>
-          <strong>{{ item.salt / 2 }}</strong>
+          <i>식이섬유</i>
+          <span>{{ item.fiber }}g</span>
+          <meter
+            v-bind:id="item.name"
+            min="0"
+            max="25"
+            v-bind:value="item.fiber"
+          >item.protcarbonein/25</meter>
         </li>
         <li>
-          <strong>콜레스테롤 : {{item.cholesterol}}</strong>
-          <strong>{{ item.cholesterol / 0.3 }}</strong>
+          <i>수분</i>
+          <span>{{ item.water }}mL</span>
+          <meter
+            v-bind:id="item.name"
+            min="0"
+            max="2000"
+            v-bind:value="item.water"
+          >item.protcarbonein/2000</meter>
         </li>
       </ul>
     </div>
@@ -58,10 +93,8 @@ export default Vue.extend({
     foods: Array as () => IFoodInfo[]
   },
   methods: {
-    sayHi() {
-      console.log("=============");
-      console.log(this.$props);
-      console.log("=============");
+    insertCart(item: IFoodInfo) {
+      console.log("선택한녀석", item);
     }
   }
 });

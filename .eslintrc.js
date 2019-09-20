@@ -13,6 +13,9 @@ module.exports = {
   plugins: ["html", "standard", "vue"],
   // add your custom rules here
   rules: {
+    quotes: 0,
+    semi: 0,
+    "no-unused-vars": 0,
     // allow async-await
     "generator-star-spacing": "off",
     // allow debugger during development

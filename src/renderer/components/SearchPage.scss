@@ -1,0 +1,37 @@
+@import "./../font.scss";
+h2 {
+  position: relative;
+  font-size: 30px;
+  font-weight: 600;
+  text-shadow: 0px 3px 4px grey;
+  color: #ffffff;
+  width: calc(100vw - 10px);
+  text-align: center;
+  padding: 0px 0px 10px 0px;
+}
+h3 {
+  position: relative;
+  font-size: 20px;
+  font-weight: 400;
+  text-shadow: 0px 3px 4px grey;
+  color: #ffffff;
+  width: calc(100vw - 10px);
+  text-align: center;
+  padding: 0px 0px 25px 0px;
+}
+
+input {
+  width: 80%;
+  max-width: 700px;
+  height: 70px;
+  line-height: 70px;
+  font-size: 45px;
+  color: #505050;
+  font-weight: 400;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 0px;
+  margin: auto;
+  box-shadow: inset 0px 3px 4px rgba(0, 0, 0, 0.4);
+}
