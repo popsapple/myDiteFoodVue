@@ -6,10 +6,14 @@
     </hgroup>
     <input type="text" v-on:input="searchTerm" />
     <FoodCard v-bind:foods="TestInfo" />
+    <MealList v-bind:foods="TestInfo" v-bind:time="'morning'" v-bind:korTime="'아침'" />
+    <MealList v-bind:foods="TestInfo" v-bind:time="'lunch'" v-bind:korTime="'점심'" />
+    <MealList v-bind:foods="TestInfo" v-bind:time="'dinner'" v-bind:korTime="'저녁'" />
   </section>
 </template>
 <script lang="ts">
 import FoodCard from "./FoodCard/FoodCard.vue";
+import MealList from "./MealList/MealList.vue";
 import Vue from "vue";
 import axios from "axios";
 import "./SearchPage.scss";
@@ -31,7 +35,7 @@ const XmlSearched: any[] = [
 const XmlKeyWord = "김치";
 
 export default Vue.extend({
-  components: { FoodCard },
+  components: { FoodCard, MealList },
   data: () => {
     return {
       message: "Hello",

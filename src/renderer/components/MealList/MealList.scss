@@ -1,0 +1,33 @@
+@import "./../../main.scss";
+.MealList {
+  position: fixed;
+  top: 0px;
+  right: -200px;
+  width: 200px;
+  height: 100vh;
+  > section {
+    position: relative;
+    &.morning > button {
+      top: 50px;
+    }
+    &.lunch > button {
+      top: 120px;
+    }
+    &.dinner > button {
+      top: 190px;
+    }
+    > button {
+      @include buttons;
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 10px 0px 0px 10px;
+      left: -60px;
+      top: 0px;
+    }
+    > ul {
+      position: relative;
+      list-style: none;
+    }
+  }
+}
