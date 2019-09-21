@@ -19,8 +19,8 @@
     "postinstall": "npm run lint:fix"
   },
   "build": {
-    "productName": "dite",
-    "appId": "MyApp",
+    "productName": "diteApp",
+    "appId": "MyccccApp",
     "directories": {
       "output": "build"
     },
