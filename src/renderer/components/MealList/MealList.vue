@@ -7,7 +7,7 @@
           <li>
             <ul>
               <li>
-                <button class="insert" v-on:click="removeMeal({meal: 'morning', index: index})">거르기</button>
+                <button class="insert" v-on:click="removeMeal({meal: time, index: index})">거르기</button>
               </li>
             </ul>
             <strong class="title">{{ item.name }}</strong>
