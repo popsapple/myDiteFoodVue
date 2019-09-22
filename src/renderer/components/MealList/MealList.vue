@@ -2,7 +2,7 @@
   <div class="MealList">
     <section v-bind:class="time">
       <button>{{korTime}}</button>
-      <div class="FoodCard" v-for="(item, index) in getMornigMeal" v-bind:key="index">
+      <div class="FoodCard" v-for="(item, index) in getMealList[time]" v-bind:key="index">
         <ul class="content">
           <li>
             <ul>
@@ -82,13 +82,12 @@ import { mapActions, mapGetters } from "vuex";
 
 export default Vue.extend({
   props: {
-    foods: Array as () => IFoodInfo[],
     time: String,
     korTime: String
   },
   computed: {
     ...mapGetters({
-      getMornigMeal: "getMornigMeal"
+      getMealList: "getMealList"
     })
   },
   methods: {

@@ -6,9 +6,9 @@
     </hgroup>
     <input type="text" v-on:input="searchTerm" />
     <FoodCard v-bind:foods="TestInfo" />
-    <MealList v-bind:foods="TestInfo" v-bind:time="'morning'" v-bind:korTime="'아침'" />
-    <MealList v-bind:foods="TestInfo" v-bind:time="'lunch'" v-bind:korTime="'점심'" />
-    <MealList v-bind:foods="TestInfo" v-bind:time="'dinner'" v-bind:korTime="'저녁'" />
+    <MealList v-bind:time="'morning'" v-bind:korTime="'아침'" />
+    <MealList v-bind:time="'lunch'" v-bind:korTime="'점심'" />
+    <MealList v-bind:time="'dinner'" v-bind:korTime="'저녁'" />
   </section>
 </template>
 <script lang="ts">

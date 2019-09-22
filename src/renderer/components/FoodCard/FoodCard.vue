@@ -8,10 +8,10 @@
               <button class="insert" v-on:click="addMeal({meal: 'morning', item: item})">아침</button>
             </li>
             <li>
-              <button class="insert" v-on:click="insertCart(item)">점심</button>
+              <button class="insert" v-on:click="addMeal({meal: 'lunch', item: item})">점심</button>
             </li>
             <li>
-              <button class="insert" v-on:click="insertCart(item)">저녁</button>
+              <button class="insert" v-on:click="addMeal({meal: 'dinner', item: item})">저녁</button>
             </li>
           </ul>
           <strong class="title">{{ item.name }}</strong>
