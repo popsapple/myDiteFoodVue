@@ -27,8 +27,7 @@ export default new Vuex.Store({
       return state.selectedFoods[props.meal];
     },
     removeMeal(state, props) {
-      state.selectedFoods[props.meal].splice(props.idx, 1);
-      console.log("삭제된거확인", state);
+      state.selectedFoods[props.meal].splice(props.index, 1);
       return state.selectedFoods[props.meal];
     }
   },

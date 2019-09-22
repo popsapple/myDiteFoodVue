@@ -1,7 +1,7 @@
 <template>
-  <div class="MealList">
+  <div class="MealList" v-bind:class="(openMenu ? 'open' : '')">
     <section v-bind:class="time">
-      <button>{{korTime}}</button>
+      <button v-on:click="changeMenu(time)">{{korTime}}</button>
       <div class="FoodCard" v-for="(item, index) in getMealList[time]" v-bind:key="index">
         <ul class="content">
           <li>
@@ -82,15 +82,27 @@ import { mapActions, mapGetters } from "vuex";
 
 export default Vue.extend({
   props: {
+    openmenu: String,
     time: String,
     korTime: String
   },
   computed: {
+    openMenu() {
+      if (this.$props.time == this.$props.openmenu) {
+        return true;
+      } else {
+        return false;
+      }
+    },
     ...mapGetters({
       getMealList: "getMealList"
     })
   },
   methods: {
+    changeMenu(time: String) {
+      console.log("1번실행", time);
+      this.$emit("change-menu", time);
+    },
     insertCart(item: IFoodInfo) {
       console.log("선택한녀석", item);
     },

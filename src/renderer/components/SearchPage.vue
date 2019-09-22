@@ -6,9 +6,24 @@
     </hgroup>
     <input type="text" v-on:input="searchTerm" />
     <FoodCard v-bind:foods="TestInfo" />
-    <MealList v-bind:time="'morning'" v-bind:korTime="'아침'" />
-    <MealList v-bind:time="'lunch'" v-bind:korTime="'점심'" />
-    <MealList v-bind:time="'dinner'" v-bind:korTime="'저녁'" />
+    <MealList
+      v-on:change-menu="changeMenu"
+      v-bind:openmenu="opmeMenu"
+      v-bind:time="'morning'"
+      v-bind:korTime="'아침'"
+    />
+    <MealList
+      v-on:change-menu="changeMenu"
+      v-bind:openmenu="opmeMenu"
+      v-bind:time="'lunch'"
+      v-bind:korTime="'점심'"
+    />
+    <MealList
+      v-on:change-menu="changeMenu"
+      v-bind:openmenu="opmeMenu"
+      v-bind:time="'dinner'"
+      v-bind:korTime="'저녁'"
+    />
   </section>
 </template>
 <script lang="ts">
@@ -33,6 +48,7 @@ const XmlSearched: any[] = [
   }
 ];
 const XmlKeyWord = "김치";
+const opmeMenu = "김치";
 
 export default Vue.extend({
   components: { FoodCard, MealList },
@@ -40,10 +56,15 @@ export default Vue.extend({
     return {
       message: "Hello",
       TestInfo: XmlSearched,
-      keyWord: XmlKeyWord
+      keyWord: XmlKeyWord,
+      opmeMenu: opmeMenu
     };
   },
   methods: {
+    changeMenu(menu: String) {
+      console.log("이벤트전달받은건지", menu);
+      this.$data.opmeMenu = menu;
+    },
     searchTerm(event: any) {
       var queryParams = "/static/foods.xml";
       // creating from single ast
