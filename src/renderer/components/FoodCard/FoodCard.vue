@@ -5,7 +5,7 @@
         <li>
           <ul>
             <li>
-              <button class="insert" v-on:click="insertCart(item)">아침</button>
+              <button class="insert" v-on:click="addMeal({meal: 'morning', item: item})">아침</button>
             </li>
             <li>
               <button class="insert" v-on:click="insertCart(item)">점심</button>
@@ -75,6 +75,7 @@
 <script lang="ts">
 import "./FoodCard.scss";
 import Vue from "vue";
+import { mapActions, mapGetters } from "vuex";
 
 export interface IFoodInfo {
   title: string;
@@ -92,10 +93,18 @@ export default Vue.extend({
   props: {
     foods: Array as () => IFoodInfo[]
   },
+  computed: {
+    ...mapGetters({
+      getMornigMeal: "getMornigMeal"
+    })
+  },
   methods: {
     insertCart(item: IFoodInfo) {
       console.log("선택한녀석", item);
-    }
+    },
+    ...mapActions({
+      addMeal: "addMeal"
+    })
   }
 });
 </script>

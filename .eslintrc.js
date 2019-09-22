@@ -15,6 +15,7 @@ module.exports = {
   rules: {
     quotes: 0,
     semi: 0,
+    "space-before-function-paren": ["error", "never"],
     "no-unused-vars": 0,
     // allow async-await
     "generator-star-spacing": "off",
