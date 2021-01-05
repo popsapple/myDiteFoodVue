@@ -54,7 +54,7 @@
   },
   "dependencies": {
     "@types/vue": "^2.0.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "portfinder": "^1.0.24",
     "reflect-metadata": "^0.1.13",
     "ts-loader": "^6.1.0",
